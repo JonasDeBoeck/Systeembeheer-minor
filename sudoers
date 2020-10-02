@@ -18,7 +18,7 @@ Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 
 # User privilege specification
 root	ALL=(ALL:ALL) ALL
-check   ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_apt /usr/sbin/arp
+check   ALL=NOPASSWD:/usr/lib/nagios/plugins/check_apt, /usr/sbin/arp
 
 # Members of the admin group may gain root privileges
 %admin ALL=(ALL) ALL
