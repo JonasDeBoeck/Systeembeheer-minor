@@ -6,7 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "ns.jonas-deboeck.sb.uclllabs.be" {
+zone "jonas-deboeck.sb.uclllabs.be" {
      type master;
      file "/etc/bind/db.local";
 }; 
