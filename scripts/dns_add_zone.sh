@@ -1,7 +1,11 @@
 #! /bin/bash
+if [ "$(id -u)" -ne 0 ]; then
+        echo "This script must be run by root" >&2
+        exit 1
+fi
 if [ $# -eq 0 ]
   then
-    echo "No parameters supplied"
+    echo "No parameters supplied" >&2
     exit 1
 fi
 NAME_ZONE=$1
