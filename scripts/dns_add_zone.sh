@@ -1,5 +1,9 @@
 #! /bin/bash
-
+if [ $# -eq 0 ]
+  then
+    echo "No parameters supplied"
+    exit 1
+fi
 NAME_ZONE=$1
 echo "$NAME_ZONE"
 
