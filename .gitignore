@@ -1,2 +1,4 @@
 mrt/*
 incron.d/*
+bind/named.conf.mrt
+bind/mrt/*
