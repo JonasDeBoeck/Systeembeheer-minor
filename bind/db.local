@@ -2,8 +2,8 @@
 ; BIND data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	ns.jonas-deboeck.sb.uclllabs.be. jonas.deboeck.student.ucll.be.. (
-			      4		; Serial
+@	IN	SOA	ns.jonas-deboeck.sb.uclllabs.be. jonasdeboeck.hotmail.be. (
+			      5		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
