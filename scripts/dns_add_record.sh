@@ -62,6 +62,7 @@ else
         create_mx_record "$NAME" "$IP" "$DOMEIN"
     ;;
     A) echo "$RECORD_TYPE"                                                                                                                                                                                                                          DOMEIN=$3
+       DOMEIN=$3
        IP=$4
        ZONE=$5
        create_a_record "$DOMEIN" "$IP" "$SUB"
