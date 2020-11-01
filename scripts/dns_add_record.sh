@@ -1,9 +1,4 @@
 #!/bin/bash
-if [ "$(id -u)" -ne 0 ]; then
-        echo "This script must be run by root" >&2
-        exit 1
-fi
-
 function extract_subdomain_from_fqdn () {
   SUB="$(cut -d'.' -f1 <<< "$1")"
 }
@@ -61,7 +56,7 @@ else
         DOMEIN=$5
         create_mx_record "$NAME" "$IP" "$DOMEIN"
     ;;
-    A) echo "$RECORD_TYPE"                                                                                                                                                                                                                          DOMEIN=$3
+    A) echo "$RECORD_TYPE"
        DOMEIN=$3
        IP=$4
        ZONE=$5
