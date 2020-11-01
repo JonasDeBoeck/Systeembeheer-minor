@@ -1,3 +1,4 @@
+#!/bin/bash
 if [[ $1 != "-t" ]]; then
   RECORD_TYPE="A"
   DOMEIN=$1
