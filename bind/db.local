@@ -17,5 +17,7 @@ ns1     IN      A       193.191.176.254
 ns2     IN      A       193.191.177.4
 ;List van andere devices
 www     IN      A       193.191.177.159
+www1    IN      A       193.191.177.159
+www2    IN      A       193.191.177.159
 test    IN      A       193.191.177.254
 
