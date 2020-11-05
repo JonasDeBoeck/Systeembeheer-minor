@@ -1,0 +1,8 @@
+[Unit]
+Description=Add static arp entry for gateway
+
+[Service]
+ExecStart=/etc/scripts/add_arp_entry.sh
+
+[Install]
+WantedBy=multi.user.target
