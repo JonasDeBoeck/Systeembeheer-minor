@@ -3,12 +3,7 @@
 :INPUT ACCEPT [66:4084]
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [34:4200]
-:ntp - [0:0]
 :sshguard - [0:0]
 -A INPUT -p tcp -m tcp --dport 22345 -j sshguard
--A INPUT -p udp -m udp --dport 123 -j ntp
--A ntp -s 193.191.177.6/32 -j ACCEPT
--A ntp -s 193.191.177.197/32 -j ACCEPT
--A ntp -j DROP
 COMMIT
 # Completed on Thu Oct 29 00:19:57 2020
