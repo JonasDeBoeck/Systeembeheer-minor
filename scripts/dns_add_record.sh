@@ -18,16 +18,24 @@ function db_file_exists() {
   fi
 }
 
+function update_serial() {
+  OLD_SERIAL=$(grep -Po '\d+\s+; Serial' "/etc/bind/mrt/db.$SUB" | grep -o '^\S*')
+  NEW_SERIAL=$(("$OLD_SERIAL" + 1))
+  sed -i "0,/$OLD_SERIAL/s//$NEW_SERIAL/" "/etc/bind/mrt/db.$SUB"
+}
+
 function create_a_record() {
   extract_subdomain_from_fqdn "$ZONE"
   db_file_exists "$SUB"
   echo "$DOMEIN    IN    A    $IP" >> "/etc/bind/mrt/db.$SUB"
+  update_serial "$SUB"
 }
 
 function create_cname_record(){
   SUB="$(cut -d'.' -f2 <<< "$DOMEIN")"
   db_file_exists "$SUB"
   echo "$ALIAS    IN    CNAME    $DOMEIN." >> "/etc/bind/mrt/db.$SUB"
+  update_serial "$SUB"
 }
 
 function create_mx_record() {
@@ -35,6 +43,7 @@ function create_mx_record() {
   db_file_exists "$SUB"
   echo "        IN    MX    10    $NAME" >> "/etc/bind/mrt/db.$SUB"
   echo "$NAME    IN    A    $IP" >> "/etc/bind/mrt/db.$SUB"
+  update_serial "$SUB"
 }
 
 if [[ $1 != "-t" ]]; then
