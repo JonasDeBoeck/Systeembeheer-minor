@@ -5,4 +5,4 @@ Description=Add static arp entry for gateway
 ExecStart=/etc/scripts/add_arp_entry.sh
 
 [Install]
-WantedBy=multi.user.target
+WantedBy=multi-user.target
