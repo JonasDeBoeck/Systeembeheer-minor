@@ -16,18 +16,18 @@ then
   touch "/var/www/$SUBDOMEIN/index.html"
   echo "welcome $SUBDOMEIN" >> "/var/www/$SUBDOMEIN/index.html"
 
-  touch "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
+  touch "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
 
-  echo "<VirtualHost *:80>" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "	ServerAdmin webmaster@localhost" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "	ServerName $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "	ServerAlias $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "	DocumentRoot /var/www/$SUBDOMEIN" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "	ErrorLog ${APACHE_LOG_DIR}/$SUBDOMEIN-error.log" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "	CustomLog ${APACHE_LOG_DIR}/$SUBDOMEIN-access.log combined" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
-  echo "</VirtualHost>" >> "/etc/apache2/sites-available/mrt/$SUBDOMEIN.conf"
+  echo "<VirtualHost *:80>" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	ServerAdmin webmaster@localhost" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	ServerName $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	ServerAlias $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	DocumentRoot /var/www/$SUBDOMEIN" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	ErrorLog ${APACHE_LOG_DIR}/$SUBDOMEIN-error.log" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	CustomLog ${APACHE_LOG_DIR}/$SUBDOMEIN-access.log combined" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "</VirtualHost>" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
 
-  a2ensite "mrt/$SUBDOMEIN.conf"
+  a2ensite "mrt.$SUBDOMEIN.conf"
   systemctl reload apache2
 else
   echo "The given subzone doesn't exist" >&2
