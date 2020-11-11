@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ "$(id -u)" -ne 0 ]; then
+        echo "This script must be run by root" >&2
+        exit 1
+fi
 
 FQDN=$1
 # echo "$FQDN"
@@ -19,4 +23,13 @@ then
   echo "	ServerName $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
   echo "	ServerAlias $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
   echo "	DocumentRoot /var/www/$SUBDOMEIN" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
+  echo "	ErrorLog ${APACHE_LOG_DIR}/$SUBDOMEIN-error.log" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
+  echo "	CustomLog ${APACHE_LOG_DIR}/$SUBDOMEIN-access.log combined" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
   echo "</VirtualHost>" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
+
+  a2ensite "$SUBDOMEIN.conf"
+  apache2ctl restart
+else
+  echo "The given subzone doesn't exist" >&2
+  exit 1
+fi
