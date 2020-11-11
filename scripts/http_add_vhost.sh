@@ -28,7 +28,7 @@ then
   echo "</VirtualHost>" >> "/etc/apache2/sites-available/$SUBDOMEIN.conf"
 
   a2ensite "$SUBDOMEIN.conf"
-  apache2ctl restart
+  systemctl reload apache2
 else
   echo "The given subzone doesn't exist" >&2
   exit 1
