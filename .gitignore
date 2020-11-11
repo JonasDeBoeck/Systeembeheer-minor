@@ -2,5 +2,5 @@ mrt/*
 incron.d/*
 bind/named.conf.mrt
 bind/mrt/*
-/etc/apache2/sites-available/mrt/*
-/etc/apache2/sites-enabled/mrt/*
+/etc/apache2/sites-available/mrt.*.conf
+/etc/apache2/sites-enabled/mrt.*.conf
