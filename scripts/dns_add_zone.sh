@@ -22,6 +22,7 @@ touch "/etc/bind/mrt/db.$NAME_ZONE"
 echo "zone \"$NAME_ZONE.jonas-deboeck.sb.uclllabs.be\" IN {" >> "/etc/bind/named.conf.mrt"
 echo "type master;">> "/etc/bind/named.conf.mrt"
 echo "file \"/etc/bind/mrt/db.$NAME_ZONE\";" >> "/etc/bind/named.conf.mrt"
+echo "allow-transfer { 193.191.177.159; };" >> "/etc/bind/named.conf.mrt"
 echo "};" >> "/etc/bind/named.conf.mrt"
 
 echo ";" >> "/etc/bind/mrt/db.$NAME_ZONE"
@@ -35,7 +36,12 @@ echo "                          86400         ; Retry" >> "/etc/bind/mrt/db.$NAM
 echo "                        2419200         ; Expire" >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo "                         604800 )       ; Negative Cache TTL" >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo ";" >> "/etc/bind/mrt/db.$NAME_ZONE"
-echo "@       IN      NS      ns.jonas-deboeck.sb.uclllabs.be." >> "/etc/bind/mrt/db.$NAME_ZONE"
+echo "@       IN      NS      ns.$NAME_ZONE.jonas-deboeck.sb.uclllabs.be." >> "/etc/bind/mrt/db.$NAME_ZONE"
+echo "@	      IN      A       193.191.177.159" >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo "ns      IN      A       193.191.177.159" >> "/etc/bind/mrt/db.$NAME_ZONE"
+
+echo "$NAME_ZONE  IN  NS ns.jonas-deboeck.sb.uclllabs.be." >> "/etc/bind/db.local"
+
+update_serial
 
 service bind9 restart
