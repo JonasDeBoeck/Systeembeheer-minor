@@ -20,4 +20,5 @@ www     IN      A       193.191.177.159
 www1    IN      A       193.191.177.159
 www2    IN      A       193.191.177.159
 test    IN      A       193.191.177.254
-
+        IN      MX  10  mx.jonas-deboeck.sb.uclllabs.be.
+mx      IN      A       193.191.177.159
