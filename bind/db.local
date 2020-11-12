@@ -1,7 +1,7 @@
 ;
 ; BIND data file for local loopback interface
 ;
-$TTL	604800
+$TTL	500
 @	IN	SOA	ns.jonas-deboeck.sb.uclllabs.be. jonasdeboeck.hotmail.be. (
 			      6		; Serial
 			 604800		; Refresh
@@ -23,3 +23,4 @@ www2    IN      A       193.191.177.159
 test    IN      A       193.191.177.254
 workplease  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
 pleasework  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
+subzonevoh7sa  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
