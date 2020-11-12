@@ -20,7 +20,7 @@ echo "$NAME_ZONE"
 
 touch "/etc/bind/mrt/db.$NAME_ZONE"
 
-echo "zone \"$NAME_ZONE.jonas-deboeck.sb.uclllabs.be\" IN {" >> "/etc/bind/named.conf.mrt"
+echo "zone \"$NAME_ZONE.jonas-deboeck.sb.uclllabs.be\" {" >> "/etc/bind/named.conf.mrt"
 echo "type master;">> "/etc/bind/named.conf.mrt"
 echo "file \"/etc/bind/mrt/db.$NAME_ZONE\";" >> "/etc/bind/named.conf.mrt"
 echo "allow-transfer { 193.191.177.159; };" >> "/etc/bind/named.conf.mrt"
