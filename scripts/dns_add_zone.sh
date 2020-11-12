@@ -37,7 +37,7 @@ echo "                          86400         ; Retry" >> "/etc/bind/mrt/db.$NAM
 echo "                        2419200         ; Expire" >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo "                         604800 )       ; Negative Cache TTL" >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo ";" >> "/etc/bind/mrt/db.$NAME_ZONE"
-echo "@       IN      NS      ns.$NAME_ZONE.jonas-deboeck.sb.uclllabs.be." >> "/etc/bind/mrt/db.$NAME_ZONE"
+echo "@       IN      NS      ns.jonas-deboeck.sb.uclllabs.be." >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo "@	      IN      A       193.191.177.159" >> "/etc/bind/mrt/db.$NAME_ZONE"
 echo "ns      IN      A       193.191.177.159" >> "/etc/bind/mrt/db.$NAME_ZONE"
 
