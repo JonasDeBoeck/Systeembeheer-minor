@@ -13,6 +13,7 @@ function update_serial() {
   OLD_SERIAL=$(grep -Po '\d+\s+; Serial' "/etc/bind/mrt/db.local" | grep -o '^\S*')
   NEW_SERIAL=$(("$OLD_SERIAL" + 1))
   sed -i "0,/$OLD_SERIAL/s//$NEW_SERIAL/" "/etc/bind/mrt/db.local"
+}
 
 NAME_ZONE=$1
 echo "$NAME_ZONE"
