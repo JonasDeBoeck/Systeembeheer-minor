@@ -1,8 +1,10 @@
 [Unit]
 Description=Add static arp entry for gateway
+After=network.target
 
 [Service]
 ExecStart=/etc/scripts/add_arp_entry.sh
+Type=oneshot
 
 [Install]
 WantedBy=multi-user.target
