@@ -7,6 +7,7 @@ fi
 FQDN=$1
 # echo "$FQDN"
 SUBDOMEIN="$(cut -d'.' -f1 <<< "$1")"
+ZONE="$(cut -d'.' -f2 <<< "$1")"
 # echo "$SUBDOMEIN"
 FILENAAM="db.$SUBDOMEIN"
 # echo "$FILENAAM"
@@ -14,7 +15,7 @@ if [ -e "/etc/bind/mrt/$FILENAAM" ]
 then
   mkdir "/var/www/$SUBDOMEIN"
   touch "/var/www/$SUBDOMEIN/index.html"
-  echo "welcome $SUBDOMEIN" >> "/var/www/$SUBDOMEIN/index.html"
+  echo "welcome $SUBDOMEIN.$ZONE" >> "/var/www/$SUBDOMEIN/index.html"
 
   touch "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
 
