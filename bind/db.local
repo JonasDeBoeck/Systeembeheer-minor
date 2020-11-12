@@ -3,7 +3,7 @@
 ;
 $TTL	500
 @	IN	SOA	ns.jonas-deboeck.sb.uclllabs.be. jonasdeboeck.hotmail.be. (
-			      6		; Serial
+			      7		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -14,8 +14,6 @@ $TTL	500
 @       IN      NS      ns2.uclllabs.be.
 @       IN      A       193.191.177.159
 ns      IN      A       193.191.177.159
-ns1     IN      A       193.191.176.254
-ns2     IN      A       193.191.177.4
 ;List van andere devices
 www     IN      A       193.191.177.159
 www1    IN      A       193.191.177.159
@@ -24,3 +22,4 @@ test    IN      A       193.191.177.254
 workplease  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
 pleasework  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
 subzonevoh7sa  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
+checktest  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
