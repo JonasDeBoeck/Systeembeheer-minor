@@ -9,7 +9,7 @@ FQDN=$1
 SUBDOMEIN="$(cut -d'.' -f1 <<< "$1")"
 ZONE="$(cut -d'.' -f2 <<< "$1")"
 # echo "$SUBDOMEIN"
-FILENAAM="db.$SUBDOMEIN"
+FILENAAM="db.$ZONE"
 # echo "$FILENAAM"
 if [ -e "/etc/bind/mrt/$FILENAAM" ]
 then
@@ -21,8 +21,8 @@ then
 
   echo "<VirtualHost *:80>" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
   echo "	ServerAdmin webmaster@localhost" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
-  echo "	ServerName $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
-  echo "	ServerAlias $SUBDOMEIN.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	ServerName $SUBDOMEIN.$ZONE.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
+  echo "	ServerAlias $SUBDOMEIN.$ZONE.jonas-deboeck.sb.uclllabs.be" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
   echo "	DocumentRoot /var/www/$SUBDOMEIN" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
   echo "	ErrorLog ${APACHE_LOG_DIR}/$SUBDOMEIN-error.log" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
   echo "	CustomLog ${APACHE_LOG_DIR}/$SUBDOMEIN-access.log combined" >> "/etc/apache2/sites-available/mrt.$SUBDOMEIN.conf"
