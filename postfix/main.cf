@@ -19,3 +19,4 @@ recipient_delimiter = +
 
 compatibility_level = 2
 
+home_mailbox = Maildir/
