@@ -12,6 +12,7 @@ $TTL	500
 @       IN      NS      ns.jonas-deboeck.sb.uclllabs.be.
 @       IN      NS      ns1.uclllabs.be.
 @       IN      NS      ns2.uclllabs.be.
+@       IN      NS      rafael-backx.sb.uclllabs.be.
 @       IN      A       193.191.177.159
 ns      IN      A       193.191.177.159
 ;List van andere devices
