@@ -14,7 +14,8 @@ alias_database = hash:/etc/aliases
 mydestination = $myhostname, localhost.$mydomain, localhost
 relayhost = 
 mynetworks = 127.0.0.0/8
-inet_interfaces = loopback-only
+# inet_interfaces = loopback-only
+inet_interfaces = 193.191.177.159
 recipient_delimiter = +
 
 compatibility_level = 2
