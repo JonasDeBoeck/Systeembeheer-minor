@@ -3,7 +3,7 @@
 ;
 $TTL	500
 @	IN	SOA	ns.jonas-deboeck.sb.uclllabs.be. jonasdeboeck.hotmail.be. (
-			      17		; Serial
+			      18		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -21,6 +21,8 @@ www1    IN      A       193.191.177.159
 www2    IN      A       193.191.177.159
 secure  IN      A       193.191.177.159
 supersecure IN  A       193.191.177.159
+@       IN      CAA   1 issue "letsencrypt.org"
+@       IN      CAA   1 iodef "mailto:jonas.deboeck@student.ucll.be"
 test    IN      A       193.191.177.254
 @       IN      MX  10  mx
 mx      IN      A       193.191.177.159
