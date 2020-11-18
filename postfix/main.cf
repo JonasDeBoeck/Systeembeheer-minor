@@ -20,6 +20,9 @@ recipient_delimiter = +
 
 compatibility_level = 2
 
+virtual_uid_maps=static:5000
+virtual_gid_maps=static:5000
+
 virtual_mailbox_domains=jonas-deboeck.sb.uclllabs.be
 virtual_mailbox_base=/var/vmail
 virtual_mailbox_maps=hash:/etc/postfix/vmailbox
