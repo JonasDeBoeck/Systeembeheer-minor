@@ -3,7 +3,7 @@
 ;
 $TTL	500
 @	IN	SOA	ns.jonas-deboeck.sb.uclllabs.be. jonasdeboeck.hotmail.be. (
-			      18		; Serial
+			      19		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -38,3 +38,4 @@ foo  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
 ok  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
 httpscriptwork.jonas-deboeck.sb.uclllabs.be  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
 httpscriptwork  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
+kleinetest  IN  NS ns.jonas-deboeck.sb.uclllabs.be.
