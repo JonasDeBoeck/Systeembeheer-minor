@@ -17,3 +17,9 @@ zone "rafael-backx.sb.uclllabs.be" {
     file "/var/cache/bind/db.rafael";
     masters { 193.191.177.197; };
 };
+
+zone "dieter-claessens.sb.uclllabs.be" {
+    type slave;
+    file "/var/cache/bind/db.dieter";
+    masters { 193.191.177.148; };
+};
