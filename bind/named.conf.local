@@ -9,7 +9,7 @@ include "/etc/bind/named.conf.mrt";
 zone "jonas-deboeck.sb.uclllabs.be" {
      type master;
      file "/etc/bind/db.local";
-     allow-transfer { 193.191.177.254; 193.191.177.4; 193.191.177.197; };
+     allow-transfer { 193.191.177.254; 193.191.177.4; 193.191.177.197; 193.191.177.148; };
 }; 
 
 zone "rafael-backx.sb.uclllabs.be" {
