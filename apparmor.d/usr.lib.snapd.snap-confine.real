@@ -217,15 +217,23 @@
     mount options=(rw bind) /usr/bin/snapctl -> /tmp/snap.rootfs_*/usr/bin/snapctl,
     mount options=(rw slave) -> /tmp/snap.rootfs_*/usr/bin/snapctl,
 
-    # /etc/alternatives (classic)
+    # /etc/alternatives (classic and normal mode)
     mount options=(rw bind) /snap/*/*/etc/alternatives/ -> /tmp/snap.rootfs_*/etc/alternatives/,
     mount options=(rw bind) /snap/*/*/etc/ssl/ -> /tmp/snap.rootfs_*/etc/ssl/,
     mount options=(rw bind) /snap/*/*/etc/nsswitch.conf -> /tmp/snap.rootfs_*/etc/nsswitch.conf,
-    # /etc/alternatives (core)
+    mount options=(rw bind) /snap/*/*/etc/apparmor/ -> /tmp/snap.rootfs_*/etc/apparmor/,
+    mount options=(rw bind) /snap/*/*/etc/apparmor.d/ -> /tmp/snap.rootfs_*/etc/apparmor.d/,
+
+    # /etc/alternatives (core/legacy mode)
     mount options=(rw bind) /etc/alternatives/ -> /tmp/snap.rootfs_*/etc/alternatives/,
+
+    # making all those directories slave shared.
     mount options=(rw slave) -> /tmp/snap.rootfs_*/etc/alternatives/,
     mount options=(rw slave) -> /tmp/snap.rootfs_*/etc/ssl/,
     mount options=(rw slave) -> /tmp/snap.rootfs_*/etc/nsswitch.conf,
+    mount options=(rw slave) -> /tmp/snap.rootfs_*/etc/apparmor/,
+    mount options=(rw slave) -> /tmp/snap.rootfs_*/etc/apparmor.d/,
+
     # the /snap directory
     mount options=(rw rbind) /snap/ -> /tmp/snap.rootfs_*/snap/,
     mount options=(rw rslave) -> /tmp/snap.rootfs_*/snap/,
